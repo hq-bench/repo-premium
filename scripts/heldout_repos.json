@@ -1,0 +1,16 @@
+{
+  "_note": "Held-out repos for agent-eval (Tier 1 in-distribution + Tier 2 OOD). NONE overlap the 10 Cell A/B/R8 repos and NONE are on SWE-bench Verified. Used for SWE-agent eval with grep/dense/router retrievers and for the fine-tuned-encoder evaluation (RG3 follow-up). Mining cutoff: PRs merged >= 2025-04-01.",
+  "tier1_in_distribution": [
+    {"org": "pandas-dev",    "repo": "pandas",  "lang": "python", "note": "scientific, similar to scikit-learn/xarray"},
+    {"org": "pallets",       "repo": "flask",   "lang": "python", "note": "web framework, similar style to django"},
+    {"org": "tornadoweb",    "repo": "tornado", "lang": "python", "note": "async server"},
+    {"org": "python-pillow", "repo": "Pillow",  "lang": "python", "note": "imaging"},
+    {"org": "encode",        "repo": "httpx",   "lang": "python", "note": "HTTP client, modern psf/requests-style"}
+  ],
+  "tier2_ood": [
+    {"org": "pydantic",      "repo": "pydantic", "lang": "python", "note": "v2 rewrite (2023+) is genuinely new code surface"},
+    {"org": "python-poetry", "repo": "poetry",   "lang": "python", "note": "dep manager, less stack-trace-famous"},
+    {"org": "fastapi",       "repo": "typer",    "lang": "python", "note": "small CLI framework, low contamination prior (repo transferred from tiangolo/typer)"},
+    {"org": "aio-libs",      "repo": "aiohttp",  "lang": "python", "note": "async HTTP, less famous than requests"}
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "cutoff": "2026-01-01",
+  "n_repos": 16,
+  "total_merged_prs": 5675,
+  "by_repo": [
+    {
+      "org_repo": "kubernetes/kubernetes",
+      "total_merged_post_cutoff": 1640,
+      "sample_titles": [
+        "Encapsulate storage mutations and snapshots inside watchCacheStorage",
+        "ipallocator: add IPv6 and dual-stack allocator tests",
+        "Extract watchCacheHistory and watchCacheStorage to separate files",
+        "Fix TestCheckpointStateRestore for newer Go versions",
+        "Extract immutable watchCache configuration fields to watchCacheConfig"
+      ],
+      "sample_pr_numbers": [
+        139720,
+        139706,
+        139704,
+        139693,
+        139676
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "scikit-learn/scikit-learn",
+      "total_merged_post_cutoff": 543,
+      "sample_titles": [
+        "DOC fix CI after renaming attribute in successive halving",
+        "test: speed up two slow tests",
+        "perf: defer scipy.stats, pandas and scipy.special imports ",
+        "FIX Set default transform_input of Pipeline to [\"X_val\"]",
+        "fix(datasets): retry corrupted OpenML downloads and report the cached path"
+      ],
+      "sample_pr_numbers": [
+        34271,
+        34269,
+        34265,
+        34263,
+        34262
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "matplotlib/matplotlib",
+      "total_merged_post_cutoff": 511,
+      "sample_titles": [
+        "Backport PR #31896 on branch v3.11.x (TST: temporarily pin pytest)",
+        "TST: temporarily pin pytest",
+        "Skip hidden y-axis offset text when positioning titles (fix #31881)",
+        "MNT: add `@classmethod` and remove `ignore` post #31867",
+        "Merge 3.11 branch into main"
+      ],
+      "sample_pr_numbers": [
+        31900,
+        31896,
+        31885,
+        31884,
+        31878
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "astropy/astropy",
+      "total_merged_post_cutoff": 511,
+      "sample_titles": [
+        "Fix BST index engine returning range query results in unsorted order",
+        "Backport PR #19904 on branch v8.0.x (Add MultiNorm to the nitpick exceptions)",
+        "Backport PR #19904 on branch v7.2.x (Add MultiNorm to the nitpick exceptions)",
+        "Add MultiNorm to the nitpick exceptions",
+        "Fix SortedArray index range query dropping duplicate rows"
+      ],
+      "sample_pr_numbers": [
+        19912,
+        19906,
+        19905,
+        19904,
+        19903
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "prettier/prettier",
+      "total_merged_post_cutoff": 494,
+      "sample_titles": [
+        "Add some JSDoc comment",
+        "Replace SDBM hash method with MurmurHash3",
+        "Bump joi from 17.13.3 to 17.13.4 in /website in the npm_and_yarn group across 1 directory",
+        "Update devDependencies",
+        "Update Acorn to v8.17.0"
+      ],
+      "sample_pr_numbers": [
+        19349,
+        19348,
+        19347,
+        19346,
+        19344
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "django/django",
+      "total_merged_post_cutoff": 386,
+      "sample_titles": [
+        "Fixed #37129 -- Clarified database cache culling behavior in docs.",
+        "Fixed #36104 -- Returned NotImplemented in Media.__add__ for non-Media RHS.",
+        "Refs #37150 -- Synced docs/make.bat with Makefile.",
+        "Fixed #29187 -- Fixed flaky receiver count assertion in signals tests.",
+        "Refs #36560, CVE-2026-35193 -- Replaced substring check on Cache-control directives in UpdateCacheMi"
+      ],
+      "sample_pr_numbers": [
+        21454,
+        21447,
+        21446,
+        21445,
+        21441
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "axios/axios",
+      "total_merged_post_cutoff": 293,
+      "sample_titles": [
+        "docs: document sensitive headers and status transition",
+        "chore(release): prepare release 1.18.0",
+        "chore: release v0.33.0",
+        "fix: improve request config handling",
+        "fix: malformed http urls"
+      ],
+      "sample_pr_numbers": [
+        11007,
+        11003,
+        11002,
+        11001,
+        11000
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "react/react",
+      "total_merged_post_cutoff": 291,
+      "sample_titles": [
+        "[flow] Update files synced to react-native to use modern flow syntax",
+        "[19.0.x] Update required references to GitHub repo",
+        "[19.1.x] Update required references to GitHub repo",
+        "[19.2.x] Update required references to GitHub repo",
+        "Update required references to GitHub repo"
+      ],
+      "sample_pr_numbers": [
+        36759,
+        36755,
+        36754,
+        36753,
+        36752
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "pytest-dev/pytest",
+      "total_merged_post_cutoff": 246,
+      "sample_titles": [
+        "build(deps): Bump actions/checkout from 6.0.2 to 6.0.3",
+        "build(deps): Bump django from 6.0.5 to 6.0.6 in /testing/plugins_integration",
+        "[automated] Update plugin list",
+        "Cherry pick 9.1.0 release notes",
+        "Release 9.1.0"
+      ],
+      "sample_pr_numbers": [
+        14600,
+        14599,
+        14595,
+        14590,
+        14589
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "sympy/sympy",
+      "total_merged_post_cutoff": 198,
+      "sample_titles": [
+        "BUG: Fix a case in P + (-P) for Elliptic curves.",
+        "polys: fix cross-type comparison in `polys/matrices/normalforms.py`",
+        "polys: fix cross-type comparison in `polys/matrices/normalforms.py`",
+        "Uses equivalence for predicate encoding in Z3 backend",
+        "CI: Fix test fails from timeout on master"
+      ],
+      "sample_pr_numbers": [
+        29869,
+        29860,
+        29859,
+        29858,
+        29856
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "pylint-dev/pylint",
+      "total_merged_post_cutoff": 185,
+      "sample_titles": [
+        "[Backport maintenance/4.0.x] Fix a crash in bad-open-mode when the mode is NotImplemented",
+        "[Backport maintenance/4.0.x] Fix a crash in not-async-context-manager when the manager has no name",
+        "Merge maintenance/4.0.x into main after 4.0.6 release",
+        "Bump pylint to 4.0.6, update changelog",
+        "Fix a crash in not-async-context-manager when the manager has no name"
+      ],
+      "sample_pr_numbers": [
+        11108,
+        11107,
+        11106,
+        11105,
+        11103
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "pydata/xarray",
+      "total_merged_post_cutoff": 141,
+      "sample_titles": [
+        "Bump the actions group across 1 directory with 2 updates",
+        "refactor: remove dead zarr<3 (has_zarr_v3) guards in tests",
+        "pin pixi until the nightly ci resolves again",
+        "ci: move pandas/scipy stubs to pypi deps",
+        "Update pre-commit hooks"
+      ],
+      "sample_pr_numbers": [
+        11380,
+        11376,
+        11372,
+        11370,
+        11369
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "psf/requests",
+      "total_merged_post_cutoff": 87,
+      "sample_titles": [
+        "Add hasattr checks for remaining protocol isinstance checks",
+        "Bump https://github.com/astral-sh/ruff-pre-commit from v0.15.14 to 0.15.15 in the pre-commit group",
+        "Fix `_encode_files` detection for `__getattr__`-based file wrappers",
+        "Add type annotation for `Request.hooks`",
+        "Disable commonly ignored Pyright linting rules"
+      ],
+      "sample_pr_numbers": [
+        7505,
+        7503,
+        7502,
+        7498,
+        7497
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "spring-projects/spring-boot",
+      "total_merged_post_cutoff": 87,
+      "sample_titles": [
+        "Fix Javadoc for GraylogExtendedLogFormatProperties",
+        "Bump @springio/antora-extensions from 1.14.11 to 1.14.12 in /antora",
+        "Fix reference to Gradle documentation for module replacement",
+        "NullPointerException in reactor-netty SniProvider and unmapped SSL bundle with RSocket",
+        "Close FileOutputStream delegate in InspectingOutputStream"
+      ],
+      "sample_pr_numbers": [
+        50699,
+        50669,
+        50641,
+        50640,
+        50639
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "gin-gonic/gin",
+      "total_merged_post_cutoff": 52,
+      "sample_titles": [
+        "refactor: optimize error message concatenation in default_validator",
+        "chore(deps): bump golang.org/x/net to v0.55.0",
+        "docs(context): align inline comments in GetPostForm example",
+        "feat(context): add Scheme() with proper reverse proxy support",
+        "fix(response): panic on Hijack/CloseNotify when wrapper unsupported"
+      ],
+      "sample_pr_numbers": [
+        4685,
+        4678,
+        4675,
+        4655,
+        4645
+      ],
+      "error": null
+    },
+    {
+      "org_repo": "sphinx-doc/sphinx",
+      "total_merged_post_cutoff": 10,
+      "sample_titles": [
+        "Document changes for HTML builder render_partial method",
+        "Document `graphviz` requirement for `sphinx.ext.graphviz`",
+        "LaTeX: fix PDF build crash with June 2026 LaTeX release (related to tables with 'colorrows')",
+        "Bump version to 9.1.1 (in development)",
+        "Strip ANSI escape sequences in `test_build_linkcheck.py` HTTP logs"
+      ],
+      "sample_pr_numbers": [
+        14488,
+        14487,
+        14484,
+        14483,
+        14475
+      ],
+      "error": null
+    }
+  ]
+}

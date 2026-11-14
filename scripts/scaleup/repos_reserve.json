@@ -1,0 +1,22 @@
+{
+  "python": [
+    "scipy/scipy",
+    "psf/black"
+  ],
+  "typescript_javascript": [
+    "nestjs/nest",
+    "reduxjs/redux-toolkit"
+  ],
+  "go": [
+    "labstack/echo",
+    "charmbracelet/bubbletea"
+  ],
+  "rust": [
+    "bevyengine/bevy",
+    "astral-sh/ruff"
+  ],
+  "java": [
+    "quarkusio/quarkus",
+    "apache/beam"
+  ]
+}

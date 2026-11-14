@@ -1,0 +1,16 @@
+# Retrieval, cached-result analysis, and plotting (Python 3.10+).
+numpy
+scipy
+matplotlib
+scikit-learn
+rank-bm25
+torch
+transformers
+sentence-transformers
+safetensors
+datasets
+huggingface-hub
+openai
+tomli; python_version < "3.11"
+# Executable used by the optional agent-evaluation harness.
+mini-swe-agent

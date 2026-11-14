@@ -1,0 +1,8 @@
+{
+  "python": [
+    "python-poetry/poetry"
+  ],
+  "typescript_javascript": [
+    "axios/axios"
+  ]
+}

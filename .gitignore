@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# RepoPremium local data and generated release outputs
+/data/
+/results/
+/figures/

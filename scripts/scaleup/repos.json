@@ -1,0 +1,52 @@
+{
+  "python": [
+    "pandas-dev/pandas",
+    "pallets/flask",
+    "aio-libs/aiohttp",
+    "pydantic/pydantic",
+    "python-poetry/poetry",
+    "python-pillow/Pillow",
+    "tornadoweb/tornado",
+    "encode/httpx"
+  ],
+  "typescript_javascript": [
+    "facebook/react",
+    "axios/axios",
+    "prettier/prettier",
+    "eslint/eslint",
+    "vitejs/vite",
+    "vitest-dev/vitest",
+    "TypeStrong/ts-node",
+    "microsoft/TypeScript"
+  ],
+  "go": [
+    "gin-gonic/gin",
+    "prometheus/prometheus",
+    "grafana/loki",
+    "go-gitea/gitea",
+    "hashicorp/terraform",
+    "uber-go/zap",
+    "stretchr/testify",
+    "spf13/cobra"
+  ],
+  "rust": [
+    "tokio-rs/tokio",
+    "serde-rs/serde",
+    "rust-lang/cargo",
+    "clap-rs/clap",
+    "BurntSushi/ripgrep",
+    "sharkdp/bat",
+    "nushell/nushell",
+    "tauri-apps/tauri"
+  ],
+  "java": [
+    "spring-projects/spring-boot",
+    "elastic/elasticsearch",
+    "apache/kafka",
+    "junit-team/junit5",
+    "google/guava",
+    "mockito/mockito",
+    "apache/flink",
+    "gradle/gradle"
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "dataset": "princeton-nlp/SWE-bench_Verified",
+  "split": "test",
+  "total_instances": 500,
+  "n_repos": 12,
+  "per_repo": {
+    "django/django": {
+      "n_instances": 231,
+      "files_per_patch_mean": 1.2,
+      "files_per_patch_median": 1,
+      "files_per_patch_max": 5,
+      "patch_loc_mean": 11.8,
+      "patch_loc_median": 6,
+      "issue_chars_mean": 1331.7,
+      "issue_chars_median": 994,
+      "patched_file_exts": {
+        ".py": 278
+      },
+      "difficulty": {
+        "15 min - 1 hour": 117,
+        "<15 min fix": 92,
+        "1-4 hours": 22
+      }
+    },
+    "sympy/sympy": {
+      "n_instances": 75,
+      "files_per_patch_mean": 1.44,
+      "files_per_patch_median": 1,
+      "files_per_patch_max": 21,
+      "patch_loc_mean": 16.6,
+      "patch_loc_median": 7,
+      "issue_chars_mean": 1017.2,
+      "issue_chars_median": 707,
+      "patched_file_exts": {
+        ".py": 108
+      },
+      "difficulty": {
+        "15 min - 1 hour": 43,
+        "<15 min fix": 25,
+        "1-4 hours": 6,
+        ">4 hours": 1
+      }
+    },
+    "sphinx-doc/sphinx": {
+      "n_instances": 44,
+      "files_per_patch_mean": 1.25,
+      "files_per_patch_median": 1.0,
+      "files_per_patch_max": 3,
+      "patch_loc_mean": 16.8,
+      "patch_loc_median": 7.5,
+      "issue_chars_mean": 1666.0,
+      "issue_chars_median": 1354.0,
+      "patched_file_exts": {
+        ".py": 55
+      },
+      "difficulty": {
+        "<15 min fix": 22,
+        "15 min - 1 hour": 17,
+        "1-4 hours": 4,
+        ">4 hours": 1
+      }
+    },
+    "matplotlib/matplotlib": {
+      "n_instances": 34,
+      "files_per_patch_mean": 1.18,
+      "files_per_patch_median": 1.0,
+      "files_per_patch_max": 3,
+      "patch_loc_mean": 9.3,
+      "patch_loc_median": 7.0,
+      "issue_chars_mean": 2287.8,
+      "issue_chars_median": 1736.0,
+      "patched_file_exts": {
+        ".py": 40
+      },
+      "difficulty": {
+        "15 min - 1 hour": 19,
+        "<15 min fix": 15
+      }
+    },
+    "scikit-learn/scikit-learn": {
+      "n_instances": 32,
+      "files_per_patch_mean": 1.06,
+      "files_per_patch_median": 1.0,
+      "files_per_patch_max": 2,
+      "patch_loc_mean": 12.3,
+      "patch_loc_median": 8.0,
+      "issue_chars_mean": 2589.2,
+      "issue_chars_median": 2084.5,
+      "patched_file_exts": {
+        ".py": 34
+      },
+      "difficulty": {
+        "15 min - 1 hour": 18,
+        "<15 min fix": 13,
+        "1-4 hours": 1
+      }
+    },
+    "astropy/astropy": {
+      "n_instances": 22,
+      "files_per_patch_mean": 1.23,
+      "files_per_patch_median": 1.0,
+      "files_per_patch_max": 4,
+      "patch_loc_mean": 27.8,
+      "patch_loc_median": 8.0,
+      "issue_chars_mean": 2510.7,
+      "issue_chars_median": 1986.5,
+      "patched_file_exts": {
+        ".py": 27
+      },
+      "difficulty": {
+        "15 min - 1 hour": 15,
+        "<15 min fix": 4,
+        "1-4 hours": 3
+      }
+    },
+    "pydata/xarray": {
+      "n_instances": 22,
+      "files_per_patch_mean": 1.23,
+      "files_per_patch_median": 1.0,
+      "files_per_patch_max": 2,
+      "patch_loc_mean": 18,
+      "patch_loc_median": 7.0,
+      "issue_chars_mean": 2664.7,
+      "issue_chars_median": 2299.5,
+      "patched_file_exts": {
+        ".py": 27
+      },
+      "difficulty": {
+        "15 min - 1 hour": 15,
+        "<15 min fix": 5,
+        "1-4 hours": 1,
+        ">4 hours": 1
+      }
+    },
+    "pytest-dev/pytest": {
+      "n_instances": 19,
+      "files_per_patch_mean": 1.11,
+      "files_per_patch_median": 1,
+      "files_per_patch_max": 2,
+      "patch_loc_mean": 22.6,
+      "patch_loc_median": 7,
+      "issue_chars_mean": 3364.4,
+      "issue_chars_median": 2306,
+      "patched_file_exts": {
+        ".py": 21
+      },
+      "difficulty": {
+        "15 min - 1 hour": 8,
+        "<15 min fix": 8,
+        "1-4 hours": 3
+      }
+    },
+    "pylint-dev/pylint": {
+      "n_instances": 10,
+      "files_per_patch_mean": 2.1,
+      "files_per_patch_median": 2.0,
+      "files_per_patch_max": 4,
+      "patch_loc_mean": 24.7,
+      "patch_loc_median": 11.0,
+      "issue_chars_mean": 3814.7,
+      "issue_chars_median": 1041.0,
+      "patched_file_exts": {
+        ".py": 20,
+        ".cfg": 1
+      },
+      "difficulty": {
+        "15 min - 1 hour": 5,
+        "<15 min fix": 3,
+        "1-4 hours": 2
+      }
+    },
+    "psf/requests": {
+      "n_instances": 8,
+      "files_per_patch_mean": 1,
+      "files_per_patch_median": 1.0,
+      "files_per_patch_max": 1,
+      "patch_loc_mean": 3.6,
+      "patch_loc_median": 4.0,
+      "issue_chars_mean": 1658.8,
+      "issue_chars_median": 869.0,
+      "patched_file_exts": {
+        ".py": 8
+      },
+      "difficulty": {
+        "<15 min fix": 6,
+        "15 min - 1 hour": 2
+      }
+    },
+    "mwaskom/seaborn": {
+      "n_instances": 2,
+      "files_per_patch_mean": 1.5,
+      "files_per_patch_median": 1.5,
+      "files_per_patch_max": 2,
+      "patch_loc_mean": 13.5,
+      "patch_loc_median": 13.5,
+      "issue_chars_mean": 1313,
+      "issue_chars_median": 1313.0,
+      "patched_file_exts": {
+        ".py": 3
+      },
+      "difficulty": {
+        "15 min - 1 hour": 2
+      }
+    },
+    "pallets/flask": {
+      "n_instances": 1,
+      "files_per_patch_mean": 1,
+      "files_per_patch_median": 1,
+      "files_per_patch_max": 1,
+      "patch_loc_mean": 3,
+      "patch_loc_median": 3,
+      "issue_chars_mean": 195,
+      "issue_chars_median": 195,
+      "patched_file_exts": {
+        ".py": 1
+      },
+      "difficulty": {
+        "<15 min fix": 1
+      }
+    }
+  }
+}
