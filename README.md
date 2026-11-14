@@ -43,6 +43,8 @@ python scripts/run_retrieval.py \
 
 This evaluates grep, BM25, and dense retrieval. PR boilerplate stripping is **on by default**; use `--no-strip-boilerplate` to disable it or `--skip-dense` for lexical retrieval only. `--code-exts` and `--tokenize-camelcase` support other languages. See `--help` for model, chunking, and query options. The three-line `smoke_test_django.py` entry point preserves legacy imports and invocations; cached output filenames retain `smoke_test_django.jsonl` for compatibility.
 
+Set `PYTHONHASHSEED=0` when regenerating the scale-up tables: set iteration order affects tie-breaking, and the cached results were produced with a fixed seed.
+
 [TABLES.md](TABLES.md) maps paper labels to regeneration commands and identifies unverified mappings and missing producers. Some analyses write under the data root: use a writable copy for reproduction, or a script’s `--out` option to redirect results.
 
 ## Agent-evaluation harness

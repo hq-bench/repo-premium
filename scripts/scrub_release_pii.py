@@ -79,8 +79,11 @@ def is_personal(match: str) -> bool:
         return False
     if dom in RESERVED_DOMAINS or dom.endswith(RESERVED_TLDS):
         return False
-    # A host label must contain at least one letter; `6.16.0` must not pass.
-    if not any(c.isalpha() for c in dom.rsplit(".", 1)[0]):
+    # Version-like hosts (`pkg@1.2.3.tgz`) have two or more all-digit labels
+    # before the TLD. A single numeric label is a real mail host
+    # (126.com, 163.com), so it is redacted.
+    labels = dom.split(".")[:-1]
+    if len(labels) >= 2 and all(l.isdigit() for l in labels):
         return False
     return True
 
