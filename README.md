@@ -1,6 +1,12 @@
-# RepoPremium
+# Repo-Premium
 
-RepoPremium is the benchmark and experiment code for **“Embeddings vs. Grep: Rethinking the Dense Advantage in Code Search”**. It compares lexical and dense code retrieval across query construction methods, repository snapshots, languages, and agent workflows, with cached-result analyses for the paper’s tables and figures.
+[![arXiv](https://img.shields.io/badge/arXiv-2611.20455-b31b1b.svg)](https://arxiv.org/abs/2611.20455)
+[![GitHub](https://img.shields.io/badge/GitHub-Code-181717?logo=github)](https://github.com/hq-bench/repo-premium)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-ffd21e)](https://huggingface.co/datasets/hq-bench/repo-premium)
+[![Code license](https://img.shields.io/badge/Code-Apache--2.0-blue.svg)](https://github.com/hq-bench/repo-premium/blob/main/LICENSE)
+[![Data license](https://img.shields.io/badge/Data-CC--BY--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+Repo-Premium is the benchmark and experiment code for **[Embeddings vs. Grep: Rethinking the Dense Advantage in Code Search](https://arxiv.org/abs/2611.20455)** (arXiv, 2026). It compares lexical and dense code retrieval across query construction methods, repository snapshots, languages, and agent workflows, with cached-result analyses for the paper’s tables and figures.
 
 ## Install
 
@@ -14,17 +20,74 @@ python -m pip install -r requirements.txt
 
 ## Data
 
-**The dataset is not yet public.** The planned download command is:
+Dataset and experiment artifacts: [hq-bench/repo-premium](https://huggingface.co/datasets/hq-bench/repo-premium).
+
+### Download the full release
+
+From the code repository root, install the Hub client and download the artifacts into `data/`:
 
 ```bash
-huggingface-cli download hq-bench/repo-premium --repo-type dataset --local-dir data
+pip install -U huggingface_hub
+hf download hq-bench/repo-premium --repo-type dataset --local-dir data
+export REPO_PREMIUM_DATA="$(cd data && pwd)"
 ```
 
-The final archive layout and availability remain TODO. Model weights are downloaded separately by the retrieval libraries. By default, `scripts/paths.py` reads from this repository’s `data/`, independent of the current working directory. To use an external data directory:
+The equivalent Python download preserves the directory structure used by the experiment scripts:
+
+```python
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="hq-bench/repo-premium",
+    repo_type="dataset",
+    local_dir="data",
+)
+```
+
+### Download only benchmark queries and relevance records
+
+```python
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="hq-bench/repo-premium",
+    repo_type="dataset",
+    local_dir="data",
+    allow_patterns=["README.md", "release/**"],
+)
+```
+
+This smaller download includes the `release/` qrel variants and manifest. Cached analyses also need their corresponding result directories; use the full download to reproduce the paper's tables.
+
+### Load one repository's queries in Python
+
+The release contains JSONL records and experiment artifacts with different schemas. Load the desired qrel file explicitly with the `json` builder:
 
 ```bash
-export REPO_PREMIUM_DATA="/path/to/repo-premium-data"
+pip install -U datasets huggingface_hub
 ```
+
+```python
+from datasets import load_dataset
+from huggingface_hub import hf_hub_download
+
+qrel_path = hf_hub_download(
+    repo_id="hq-bench/repo-premium",
+    repo_type="dataset",
+    filename="release/qrels/django__django.jsonl",
+)
+queries = load_dataset("json", data_files=qrel_path, split="train")
+
+example = queries[0]
+print(example["query_id"])
+print(example["problem_statement"])
+print(example["gold_files"])
+print(example["base_commit"])
+```
+
+Here `train` is the JSON loader's default split name, not a benchmark training partition. The `release/qrels/` directory is the 500-record base pool; other evaluation pools have separate directories under `release/`. Keep pool boundaries and use each record's `base_commit` when reconstructing its repository snapshot.
+
+By default, `scripts/paths.py` reads from this repository's `data/`, independent of the current working directory. Set `REPO_PREMIUM_DATA` to an absolute path to use an external download directory. Model weights and source repository checkouts must be obtained separately.
 
 Data, repository checkouts, and model caches are excluded from this code release. Preserve the flat `scripts/` layout and its `scaleup/`, `r9_multilang/`, `deepswe/`, and `analysis_helpers/` subdirectories: scripts import sibling modules.
 
@@ -72,7 +135,18 @@ Generative query and curation tools use an OpenAI-compatible endpoint supplied t
 
 ## Citation
 
-TODO: add the paper’s bibliographic citation and public identifier.
+If you use Repo-Premium, please cite the paper:
+
+```bibtex
+@article{xue2026embeddingsgrep,
+  title={Embeddings vs. Grep: Rethinking the Dense Advantage in Code Search},
+  author={Xue, Siqiao and Zhang, Ziyin and Liao, Zihan and Qin, Jin and Mu, Yixiang and Yu, Hang},
+  journal={arXiv preprint arXiv:2611.20455},
+  year={2026},
+  doi={10.48550/arXiv.2611.20455},
+  url={https://arxiv.org/abs/2611.20455}
+}
+```
 
 ## License
 
