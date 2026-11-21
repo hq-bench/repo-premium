@@ -22,13 +22,25 @@ python -m pip install -r requirements.txt
 
 Dataset and experiment artifacts: [hq-bench/repo-premium](https://huggingface.co/datasets/hq-bench/repo-premium).
 
-### Download the full release
+### Load the benchmark
+
+The dataset default is the final 1,265-query Python core:
+
+```python
+from datasets import load_dataset
+
+core = load_dataset("hq-bench/repo-premium", "core", split="test")
+```
+
+Named `extensions` and `lockbox` configurations are also available. See the [dataset card](https://huggingface.co/datasets/hq-bench/repo-premium) for label policies, snapshot metadata, and the original source pools. These Parquet datasets are intended for benchmark use. The legacy analysis scripts below require the archived experiment layout.
+
+### Download the paper artifacts
 
 From the code repository root, install the Hub client and download the artifacts into `data/`:
 
 ```bash
 pip install -U huggingface_hub
-hf download hq-bench/repo-premium --repo-type dataset --local-dir data
+hf download hq-bench/repo-premium --repo-type dataset --revision 97c0c94062634d8266a7238546169123a8ef2125 --local-dir data
 export REPO_PREMIUM_DATA="$(cd data && pwd)"
 ```
 
@@ -40,11 +52,12 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="hq-bench/repo-premium",
     repo_type="dataset",
+    revision="97c0c94062634d8266a7238546169123a8ef2125",
     local_dir="data",
 )
 ```
 
-### Download only benchmark queries and relevance records
+### Download only the archived source query records
 
 ```python
 from huggingface_hub import snapshot_download
@@ -52,12 +65,13 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="hq-bench/repo-premium",
     repo_type="dataset",
+    revision="97c0c94062634d8266a7238546169123a8ef2125",
     local_dir="data",
     allow_patterns=["README.md", "release/**"],
 )
 ```
 
-This smaller download includes the `release/` qrel variants and manifest. Cached analyses also need their corresponding result directories; use the full download to reproduce the paper's tables.
+The `paper-artifacts` tag points to the pinned revision above. This smaller archived download includes the `release/` qrel variants and manifest; these source pools differ from the final named evaluation configurations. Cached analyses also need their corresponding result directories; use the full download to reproduce the paper's tables.
 
 ### Load one repository's queries in Python
 
@@ -74,6 +88,7 @@ from huggingface_hub import hf_hub_download
 qrel_path = hf_hub_download(
     repo_id="hq-bench/repo-premium",
     repo_type="dataset",
+    revision="97c0c94062634d8266a7238546169123a8ef2125",
     filename="release/qrels/django__django.jsonl",
 )
 queries = load_dataset("json", data_files=qrel_path, split="train")
@@ -90,6 +105,24 @@ Here `train` is the JSON loader's default split name, not a benchmark training p
 By default, `scripts/paths.py` reads from this repository's `data/`, independent of the current working directory. Set `REPO_PREMIUM_DATA` to an absolute path to use an external download directory. Model weights and source repository checkouts must be obtained separately.
 
 Data, repository checkouts, and model caches are excluded from this code release. Preserve the flat `scripts/` layout and its `scaleup/`, `r9_multilang/`, `deepswe/`, and `analysis_helpers/` subdirectories: scripts import sibling modules.
+
+## Dataset export validation
+
+`scripts/build_dataset_release.py` exports named Parquet pools from the pinned
+paper artifacts and verifies the core corpus contents against Git objects.
+It requires the matching evaluated `.py` snapshots and upstream Git clones;
+`--help` lists the inputs. The clean dataset provides portable Python snapshot
+metadata and a corrected lockbox driver under `metadata/`.
+
+Validate a staged export, including loading every declared Hub configuration:
+
+```bash
+python scripts/validate_dataset_release.py /path/to/staged-dataset
+```
+
+The validator checks original source-record preservation, final pool counts,
+label policies, exact matched-replication query text, core gold-to-corpus paths,
+file checksums, and every configuration's declared split.
 
 ## Run retrieval
 

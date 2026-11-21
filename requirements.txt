@@ -9,6 +9,8 @@ transformers
 sentence-transformers
 safetensors
 datasets
+pyarrow
+PyYAML
 huggingface-hub
 openai
 tomli; python_version < "3.11"

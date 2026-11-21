@@ -4,6 +4,11 @@ Maps each paper table/figure label to the scripts and cached inputs that regener
 Entries marked TODO are not yet tied to a producer; the mapping is being verified
 against the final paper numbers.
 
+These commands require the original experiment layout. Download dataset revision
+`97c0c94062634d8266a7238546169123a8ef2125` (tag `paper-artifacts`), as shown in
+[README.md](README.md#download-the-paper-artifacts). The dataset’s new default
+Parquet layout is not a drop-in replacement for these cached inputs.
+
 Run from the repository root:
 
 ```bash
